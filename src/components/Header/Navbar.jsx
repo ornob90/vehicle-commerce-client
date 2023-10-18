@@ -50,6 +50,17 @@ const Navbar = () => {
           My Cart
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          onClick={() => setHidden(!hidden)}
+          to="/products/1"
+          className={({ isActive }) =>
+            isActive ? " bg-[#FF4D30] text-white py-2 px-3 rounded-md" : ""
+          }
+        >
+          Details
+        </NavLink>
+      </li>
     </>
   );
 
