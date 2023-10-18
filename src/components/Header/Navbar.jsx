@@ -58,11 +58,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="shadow-[0_0px_5px_rgba(0,0,0,0.2)]">
+    <nav className=" drop-shadow-[0_0px_5px_rgba(0,0,0,0.12)] bg-gradient-to-r from-white to-[#FFEDEA] w-full">
       <div
-        className={`z-[12] bg-white text-black  navbar w-[90%] mx-auto max-w-[1440px] flex justify-between items-center  pt-4`}
+        className={`z-[12] text-black  navbar w-[95%] mx-auto max-w-[1440px] flex justify-between items-center  pt-4`}
       >
-        <div className="border border-red-500">
+        <div className="">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
