@@ -1,7 +1,12 @@
 import React from "react";
+import Container from "../Shared/Container";
 
 const Banner = () => {
-  return <div>Banner</div>;
+  return (
+    <Container>
+      <div>Banner</div>
+    </Container>
+  );
 };
 
 export default Banner;

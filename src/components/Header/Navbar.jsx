@@ -2,7 +2,6 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import Button from "../Shared/Button";
 // import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
-import Container from "../Shared/Container";
 
 const Navbar = () => {
   const navLinks = (
@@ -59,9 +58,9 @@ const Navbar = () => {
   };
 
   return (
-    <Container className="shadow-sm">
-      <nav
-        className={`z-[12] bg-white text-black  navbar w-[90%] mx-auto flex justify-between items-center  pt-4`}
+    <nav className="shadow-[0_0px_5px_rgba(0,0,0,0.2)]">
+      <div
+        className={`z-[12] bg-white text-black  navbar w-[90%] mx-auto max-w-[1440px] flex justify-between items-center  pt-4`}
       >
         <div className="border border-red-500">
           <div className="dropdown">
@@ -138,8 +137,8 @@ const Navbar = () => {
             Login
           </Button>{" "}
         </div> */}
-      </nav>
-    </Container>
+      </div>
+    </nav>
   );
 };
 
