@@ -45,10 +45,10 @@ const Details = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
         <p className="text-center font-bold text-2xl shad py-5 text-white bg-[#FF4D30] shadow-[0_0px_5px_rgba(0,0,0,0.5)] gap-8 md:gap-0 ">
-          $10000
-        </p>
-        <p className="text-center font-bold text-2xl shad py-5 text-white bg-[#FF4D30] shadow-[0_0px_5px_rgba(0,0,0,0.5)] gap-8 md:gap-0 ">
           496 Horsepower
+        </p>
+        <p className="text-center font-bold text-2xl shad py-5 text-white bg-black shadow-[0_0px_5px_rgba(0,0,0,0.5)] gap-8 md:gap-0 ">
+          $10000
         </p>
         <p className="text-center font-bold text-2xl shad py-5 text-white bg-[#FF4D30] shadow-[0_0px_5px_rgba(0,0,0,0.5)] gap-8 md:gap-0 ">
           17 mpg (city)
