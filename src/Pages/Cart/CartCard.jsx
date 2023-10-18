@@ -4,14 +4,14 @@ import Button from "../../components/Shared/Button";
 
 const CartCard = () => {
   return (
-    <div className="grid grid-cols-5">
-      <div className="col-span-3">
+    <div className="grid grid-cols-1 md:grid-cols-5">
+      <div className="md:col-span-3">
         <img
           src="https://media.istockphoto.com/id/1186972461/photo/generic-white-car-isolated-on-white-background.webp?b=1&s=170667a&w=0&k=20&c=VWXOQDLvEJHhCihgNnErADBLaG7vpHPM7pryTquiLi8="
           alt=""
         />
       </div>
-      <div className=" col-span-2 flex flex-col gap-4">
+      <div className=" md:col-span-2 flex flex-col gap-4">
         <div className="flex justify-between items-center">
           <h3 className="font-semibold text-3xl">Name</h3>
           <Rating

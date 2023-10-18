@@ -69,7 +69,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className=" drop-shadow-[0_0px_5px_rgba(0,0,0,0.12)] bg-gradient-to-r from-white to-[#FFEDEA] w-full mb-7">
+    <nav className=" drop-shadow-[0_0px_5px_rgba(0,0,0,0.12)] bg-gradient-to-r from-white to-[#FFEDEA] w-full">
       <div
         className={`z-[12] text-black  navbar w-[95%] mx-auto max-w-[1440px] flex justify-between items-center  pt-4`}
       >
