@@ -15,6 +15,7 @@ const TestimonialSection = () => {
     {
       review:
         '"Cars were in fantastic condition, enhancing our trip. Highly recommend this car rental service for your travel needs!"',
+      name: "Potter Harry",
       shortName: "Belgrade",
       img: "https://i.pinimg.com/736x/f1/e2/36/f1e2366c0694166f0bf13d10d49a938b.jpg",
     },
