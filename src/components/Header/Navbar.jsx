@@ -42,7 +42,7 @@ const Navbar = () => {
       <li>
         <NavLink
           onClick={() => setHidden(!hidden)}
-          to="/price"
+          to="/cart"
           className={({ isActive }) =>
             isActive ? " bg-[#FF4D30] text-white py-2 px-3 rounded-md" : ""
           }
@@ -69,7 +69,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className=" drop-shadow-[0_0px_5px_rgba(0,0,0,0.12)] bg-gradient-to-r from-white to-[#FFEDEA] w-full">
+    <nav className=" drop-shadow-[0_0px_5px_rgba(0,0,0,0.12)] bg-gradient-to-r from-white to-[#FFEDEA] w-full mb-7">
       <div
         className={`z-[12] text-black  navbar w-[95%] mx-auto max-w-[1440px] flex justify-between items-center  pt-4`}
       >

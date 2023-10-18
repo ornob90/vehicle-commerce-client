@@ -4,6 +4,7 @@ import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import Home from "../Pages/Home/Home";
 import BrandShowcase from "../Pages/BrandShowcase/BrandShowcase";
+import Cart from "../Pages/Cart/Cart";
 
 const router = createBrowserRouter([
   {
@@ -16,8 +17,12 @@ const router = createBrowserRouter([
         loader: () => fetch("data.json"),
       },
       {
-        path: "/:brand",
+        path: "/:category",
         element: <BrandShowcase />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/login",

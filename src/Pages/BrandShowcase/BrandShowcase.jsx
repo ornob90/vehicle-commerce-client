@@ -22,7 +22,7 @@ const BrandShowcase = () => {
   return (
     <Container
       className="w-[90%] mx
-    -auto"
+    -auto mt-2"
     >
       <Slider ads={ads} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-16">
