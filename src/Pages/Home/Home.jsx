@@ -3,6 +3,7 @@ import Container from "../../components/Shared/Container";
 import Banner from "../../components/Header/Banner";
 import BrandSection from "./BrandSection";
 import { useLoaderData } from "react-router-dom";
+import TestimonialSection from "./TestimonialSection";
 
 const Home = () => {
   const brands = useLoaderData();
@@ -13,6 +14,7 @@ const Home = () => {
     <div>
       <Banner />
       <BrandSection brands={brands} />
+      <TestimonialSection />
     </div>
   );
 };
