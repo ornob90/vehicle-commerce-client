@@ -1,0 +1,26 @@
+[
+  {
+    "brand": "Toyota",
+    "brandImg": "./assets/toyota.png"
+  },
+  {
+    "brand": "Ford",
+    "brandImg": "./assets/ford.png"
+  },
+  {
+    "brand": "Honda",
+    "brandImg": "./assets/honda.png"
+  },
+  {
+    "brand": "BMW",
+    "brandImg": "./assets/bmw.png"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "brandImg": "./assets/benz.png"
+  },
+  {
+    "brand": "Volkswagen",
+    "brandImg": "./assets/volks.png"
+  }
+]
