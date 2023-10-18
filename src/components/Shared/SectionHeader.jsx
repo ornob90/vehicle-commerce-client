@@ -2,7 +2,7 @@ import React from "react";
 
 const SectionHeader = ({ header, subHeader, desc }) => {
   return (
-    <div className="mt-28 mb-10 mx-auto flex flex-col  justify-center items-center gap-4 text-center">
+    <div className="mt-20 md:mt-28 mb-5 md:mb-10 mx-auto flex flex-col  justify-center items-center gap-4 text-center">
       {subHeader && (
         <h3 className="font-semibold text-lg md:text-xl">{subHeader}</h3>
       )}
