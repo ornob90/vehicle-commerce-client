@@ -31,6 +31,17 @@ const Navbar = () => {
       <li>
         <NavLink
           onClick={() => setHidden(!hidden)}
+          to={`/Toyota`}
+          className={({ isActive }) =>
+            isActive ? " bg-[#FF4D30] text-white py-2 px-3 rounded-md" : ""
+          }
+        >
+          BrandShow
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          onClick={() => setHidden(!hidden)}
           to="/price"
           className={({ isActive }) =>
             isActive ? " bg-[#FF4D30] text-white py-2 px-3 rounded-md" : ""

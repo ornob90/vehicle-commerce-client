@@ -56,7 +56,7 @@ const WhyChooseUsSection = () => {
               <div className="text-[#FF4D30] text-6xl">{icon}</div>
               <div className="flex flex-col gap-3 w-[90%] md:w-[70%]">
                 <h2 className="font-bold text-xl">{header}</h2>
-                <p className="text-sm ">{desc}</p>
+                <p className="text-sm md:text-base text-[#706F7B] ">{desc}</p>
               </div>
             </div>
           ))}
