@@ -9,27 +9,35 @@ import {
 // import "swiper/swiper-bundle.min.css";
 import "swiper/css/bundle";
 
-const Slider = ({ ads }) => {
+const Slider = ({ ads, loading }) => {
   return (
-    <Swiper
-      modules={[Autoplay, Navigation, Pagination, Scrollbar, EffectCube]}
-      autoplay={{
-        delay: 2500,
-        disableOnInteraction: false,
-      }}
-      loop={true}
-      spaceBetween={50}
-      slidesPerView={1}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-    >
-      {ads.map((ad) => (
-        <SwiperSlide key={ad.id}>
-          <img src={ad.img} className="h-[450px] w-full object-cover" alt="" />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <>
+      {loading ? (
+        <div className="h-[450px] w-full flex justify-center items-center">
+          <span className="loading loading-bars loading-lg"></span>
+        </div>
+      ) : (
+        <Swiper
+          modules={[Autoplay, Navigation, Pagination, Scrollbar, EffectCube]}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+        >
+          {ads?.map((ad) => (
+            <SwiperSlide key={ad}>
+              <img src={ad} className="h-[450px] w-full object-cover" alt="" />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
+    </>
   );
 };
 

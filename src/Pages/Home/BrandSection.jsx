@@ -1,9 +1,11 @@
 import React from "react";
 import Container from "../../components/Shared/Container";
 import SectionHeader from "../../components/Shared/SectionHeader";
+import { useNavigate } from "react-router-dom";
 
 const BrandSection = ({ brands }) => {
   // console.log(brands);
+  const navigate = useNavigate();
   return (
     <Container className="w-[90%]">
       <SectionHeader
@@ -14,6 +16,7 @@ const BrandSection = ({ brands }) => {
       <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {brands?.map(({ brand, brandImg }, idx) => (
           <div
+            onClick={() => navigate(`brand/${brand}`)}
             key={brand}
             className=" p-4 flex flex-col justify-center items-center hover:scale-[.98] duration-300 shadow-[0_0px_5px_rgba(0,0,0,0.12)] border border-[#FFEDEA] text-[#676769] bg-gradient-to-r from-white to-[#dfdfdf] gap-8 md:gap-0"
           >

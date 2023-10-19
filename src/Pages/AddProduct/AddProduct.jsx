@@ -43,7 +43,7 @@ const AddProduct = () => {
       mileage,
     };
 
-    const url = BASE_URL + "product";
+    const url = BASE_URL + "/product";
 
     try {
       const result = await axios.post(url, productData, {
@@ -51,7 +51,7 @@ const AddProduct = () => {
           "Content-Type": "application/json",
         },
       });
-      console.log(result);
+      console.log(result?.data?.acknowledged);
     } catch (error) {
       console.error(error);
     }

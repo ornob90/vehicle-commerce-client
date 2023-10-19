@@ -9,6 +9,8 @@ import Details from "../Pages/Details/Details";
 import PrivateRoute from "./PrivateRoute";
 import AddProduct from "../Pages/AddProduct/AddProduct";
 
+import { BASE_URL } from "../API/api";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,7 +19,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("data.json"),
+        loader: () => fetch("/data.json"),
       },
       {
         path: "brand/:category",
@@ -26,6 +28,9 @@ const router = createBrowserRouter([
             <BrandShowcase />
           </PrivateRoute>
         ),
+
+        loader: ({ params }) =>
+          fetch(`${BASE_URL}/products/${params.category}`),
       },
       {
         path: "/products/:id",
