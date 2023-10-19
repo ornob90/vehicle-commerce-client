@@ -13,7 +13,7 @@ const BrandShowcase = () => {
   const [sliderAds, setSliderAds] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  console.log(brands);
+  // console.log(brands);
 
   useEffect(() => {
     setLoading(true);

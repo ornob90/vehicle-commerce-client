@@ -8,9 +8,9 @@ const Footer = () => {
   const { isDark } = useTheme();
   return (
     <footer
-      className={`footer pt-24 p-10 bg-base-200 text-base-content w-full max-w-[1440px] mx-auto  ${
+      className={`footer pt-24 p-10  text-base-content w-full max-w-[1440px] mx-auto  ${
         pathname === "/login" || pathname === "/signup" ? "hidden" : ""
-      } ${isDark ? "bg-[#121212] text-white" : ""}`}
+      } ${isDark ? "bg-[#121212] text-white" : "bg-base-200"}`}
     >
       <aside className="">
         <NavLink className="text-lg md:text-2xl">GatherJoy</NavLink>

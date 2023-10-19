@@ -76,7 +76,7 @@ const ProductForm = ({ action, product }) => {
   return (
     <Container className="min-h-[300px]">
       <form
-        className="grid grid-cols-1 md:grid-cols-6 md:grid-row-6 gap-4 w-[80%] lg:w-[70%] mx-auto mt-16"
+        className="grid grid-cols-1 md:grid-cols-6 md:grid-row-6 gap-4 w-[80%] lg:w-[70%] mx-auto pt-16"
         onSubmit={handleFormSubmit}
       >
         <TextField

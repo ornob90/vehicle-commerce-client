@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../../components/Shared/Container";
 import { Rating } from "@mui/material";
 import Button from "../../components/Shared/Button";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams, useRouteLoaderData } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+import { BASE_URL } from "../../API/api";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const Details = () => {
   const {
@@ -16,6 +20,44 @@ const Details = () => {
     shortdescription,
     type,
   } = useLoaderData() || {};
+
+  const { user } = useAuth();
+
+  const handleAddToCart = async () => {
+    const cartProduct = {
+      category,
+      horsepower,
+      image,
+      mileage,
+      name,
+      price,
+      rating,
+      shortdescription,
+      type,
+      userEmail: user?.email,
+    };
+
+    try {
+      const url = `${BASE_URL}/carts`;
+
+      const result = await axios.post(url, cartProduct, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (result?.data?.acknowledged) {
+        Swal.fire({
+          icon: "success",
+          title: "Product Added To The Cart",
+          showConfirmButton: true,
+          timer: 1500,
+        });
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <Container className="w-[90%] mt-12">
@@ -46,7 +88,11 @@ const Details = () => {
             <p className="mt-8">{shortdescription}</p>
           </div>
           <p className="font-bold text-2xl">${price}</p>
-          <Button className="bg-black text-white px-6 lg:px-7 py-2  font-medium rounded-sm">
+          <Button
+            type="button"
+            onClick={handleAddToCart}
+            className="bg-black text-white px-6 lg:px-7 py-2  font-medium rounded-sm"
+          >
             Add To Cart
           </Button>
         </div>
@@ -57,10 +103,10 @@ const Details = () => {
           {horsepower} Horsepower
         </p>
         <p className="text-center font-bold text-2xl shad py-5 text-white bg-black shadow-[0_0px_5px_rgba(0,0,0,0.5)] gap-8 md:gap-0 ">
-          {mileage.split("/")[1]}
+          {mileage?.split("/")[1]}
         </p>
         <p className="text-center font-bold text-2xl shad py-5 text-white bg-[#FF4D30] shadow-[0_0px_5px_rgba(0,0,0,0.5)] gap-8 md:gap-0 ">
-          {mileage.split("/")[0]}
+          {mileage?.split("/")[0]}
         </p>
       </div>
     </Container>
