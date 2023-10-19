@@ -2,6 +2,7 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import Button from "../Shared/Button";
 // import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
+import useAuth from "../../Hooks/useAuth";
 
 const Navbar = () => {
   const navLinks = (
@@ -57,6 +58,7 @@ const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const { user, signOutMethod } = useAuth();
 
   // console.log(user);
 
@@ -64,7 +66,7 @@ const Navbar = () => {
     signOutMethod()
       .then(() => {
         console.log("Signed Out");
-        navigate("/login");
+        navigate("/");
       })
       .catch((err) => console.log(err.message));
   };
@@ -126,24 +128,36 @@ const Navbar = () => {
         <div className="hidden lg:flex">
           <ul className="flex justify-between gap-4 px-1">{navLinks}</ul>
         </div>
+        {user ? (
+          <div className="flex justify-end gap-4 items-center">
+            <p className="hidden md:block ">{user?.displayName}</p>
+            <div className="hidden md:block h-[30px] w-[30px] rounded-full border border-black">
+              {user && (
+                <img
+                  src={user?.photoURL}
+                  alt=""
+                  className="w-full h-full rounded-full object-cover"
+                />
+              )}
+            </div>
 
-        <div className="flex justify-end gap-4 items-center">
-          <p className="hidden md:block ">Towfiq</p>
-          <div className="hidden md:block h-[30px] w-[30px] rounded-full border border-black">
-            <img
-              src=""
-              alt=""
-              className="w-full h-full rounded-full object-cover"
-            />
+            <Button
+              onClick={handleSignOut}
+              className="bg-[#FF4D30] text-white py-2 px-5 rounded-md"
+            >
+              Sign Out
+            </Button>
           </div>
-
-          <Button
-            // onClick={handleSignOut}
-            className="text-sm md:text-base py-[7px] px-3 bg-[#FF4D30] text-white rounded-md"
-          >
-            Sign Out
-          </Button>
-        </div>
+        ) : (
+          <div className="">
+            <Button
+              onClick={() => navigate("/login")}
+              className="bg-[#FF4D30] text-white py-2 px-5 rounded-md"
+            >
+              Login
+            </Button>{" "}
+          </div>
+        )}
 
         {/* <div className="navbar-end">
           <Button
