@@ -53,12 +53,12 @@ const Navbar = () => {
       <li>
         <NavLink
           onClick={() => setHidden(!hidden)}
-          to="/products/1"
+          to="/login"
           className={({ isActive }) =>
             isActive ? " bg-[#FF4D30] text-white py-2 px-3 rounded-md" : ""
           }
         >
-          Details
+          Login
         </NavLink>
       </li>
     </>
