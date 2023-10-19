@@ -4,8 +4,11 @@ import Button from "../../components/Shared/Button";
 import { AiFillCar, AiOutlineDollar } from "react-icons/ai";
 import { GiPayMoney } from "react-icons/gi";
 import SectionHeader from "../../components/Shared/SectionHeader";
+import useTheme from "../../Hooks/useTheme";
 
 const WhyChooseUsSection = () => {
+  const { isDark } = useTheme();
+
   const reasons = [
     {
       icon: <AiFillCar />,
@@ -35,7 +38,11 @@ const WhyChooseUsSection = () => {
           <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold">
             Best valued deals you will ever find
           </h1>
-          <p className="text-[#706F7B] text-sm lg:text-base">
+          <p
+            className={`text-[#706F7B] text-sm lg:text-base ${
+              isDark ? "text-[#CCCCCC] " : "text-[#706F7B]"
+            }`}
+          >
             Discover the best deals you'll ever find with our unbeatable offers.
             We're dedicated to providing you with the best value for your money,
             so you can enjoy top-quality services and products without breaking
@@ -56,7 +63,13 @@ const WhyChooseUsSection = () => {
               <div className="text-[#FF4D30] text-6xl">{icon}</div>
               <div className="flex flex-col gap-3 w-[90%] md:w-[70%]">
                 <h2 className="font-bold text-xl">{header}</h2>
-                <p className="text-sm md:text-base text-[#706F7B] ">{desc}</p>
+                <p
+                  className={`text-sm md:text-base text-[#706F7B] ${
+                    isDark ? "text-[#CCCCCC]" : "text-[#706F7B]"
+                  }`}
+                >
+                  {desc}
+                </p>
               </div>
             </div>
           ))}

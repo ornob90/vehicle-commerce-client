@@ -70,6 +70,8 @@ const Navbar = () => {
       className={` drop-shadow-[0_0px_5px_rgba(0,0,0,0.12)]  w-full ${
         pathname === "/login" || pathname === "/signup"
           ? "bg-[#1B2028] text-white"
+          : isDark
+          ? "bg-[#121212] text-white"
           : "bg-gradient-to-r from-white to-[#FFEDEA] text-black"
       }`}
     >

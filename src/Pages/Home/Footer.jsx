@@ -1,14 +1,16 @@
 import React from "react";
 import Container from "../../components/Shared/Container";
 import { NavLink, useLocation } from "react-router-dom";
+import useTheme from "../../Hooks/useTheme";
 
 const Footer = () => {
   const { pathname } = useLocation();
+  const { isDark } = useTheme();
   return (
     <footer
-      className={`footer mt-16 p-10 bg-base-200 text-base-content w-full max-w-[1440px] mx-auto  ${
+      className={`footer pt-24 p-10 bg-base-200 text-base-content w-full max-w-[1440px] mx-auto  ${
         pathname === "/login" || pathname === "/signup" ? "hidden" : ""
-      }`}
+      } ${isDark ? "bg-[#121212] text-white" : ""}`}
     >
       <aside className="">
         <NavLink className="text-lg md:text-2xl">GatherJoy</NavLink>

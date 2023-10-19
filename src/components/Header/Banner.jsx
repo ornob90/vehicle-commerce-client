@@ -22,7 +22,11 @@ const Banner = () => {
           Explore <span className="text-[#FF4D30]">Luxury</span> and{" "}
           <span className="text-[#FF4D30]">Performance</span>
         </h1>
-        <p className="text-[#706F7B] text-sm lg:text-base">
+        <p
+          className={` text-sm lg:text-base ${
+            isDark ? "text-[#CCCCCC] " : "text-[#706F7B]"
+          }`}
+        >
           Find your perfect ride from our wide range of top-notch vehicles.
           Experience the pinnacle of engineering, style, and comfort
         </p>
