@@ -5,6 +5,7 @@ import Button from "../../components/Shared/Button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import AuthContext from "../../Context/AuthContext";
 import Swal from "sweetalert2";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const Login = () => {
   const { signInMethod, googleSignInMethod } = useContext(AuthContext);
@@ -72,13 +73,27 @@ const Login = () => {
             placeholder="Enter Email"
             name="email"
           />
-          <input
-            required
-            className="backdrop-blur-sm pl-5 py-3 rounded-lg text-[10px] md:text-sm focus:outline-none bg-transparent border border-gray-600"
-            type="password"
-            placeholder="Enter Password"
-            name="password"
-          />
+          <div className="relative ">
+            <input
+              required
+              className=" pl-5 py-3 rounded-lg text-[10px] md:text-sm focus:outline-none bg-transparent border border-gray-600 w-full"
+              type={showPass ? "text" : "password"}
+              placeholder="Password"
+              name="password"
+            />
+
+            {showPass ? (
+              <AiOutlineEyeInvisible
+                onClick={() => setShowPass(!showPass)}
+                className="absolute top-[32%] right-[3%] text-xl"
+              />
+            ) : (
+              <AiOutlineEye
+                onClick={() => setShowPass(!showPass)}
+                className="absolute top-[32%] right-[3%] text-xl"
+              />
+            )}
+          </div>
 
           {errorMsg && <p className="text-red-600 text-sm">{errorMsg}</p>}
 
