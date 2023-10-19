@@ -21,7 +21,7 @@ const Navbar = () => {
       <li>
         <NavLink
           onClick={() => setHidden(!hidden)}
-          to="/events"
+          to="/add-product"
           className={({ isActive }) =>
             isActive ? " bg-[#FF4D30] text-white py-2 px-3 rounded-md" : ""
           }
@@ -29,17 +29,7 @@ const Navbar = () => {
           Add Product
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          onClick={() => setHidden(!hidden)}
-          to={`/Toyota`}
-          className={({ isActive }) =>
-            isActive ? " bg-[#FF4D30] text-white py-2 px-3 rounded-md" : ""
-          }
-        >
-          BrandShow
-        </NavLink>
-      </li>
+
       <li>
         <NavLink
           onClick={() => setHidden(!hidden)}
@@ -123,7 +113,7 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <NavLink className="btn btn-ghost normal-case text-lg md:text-2xl ">
+          <NavLink className="btn btn-ghost normal-case text-lg md:text-2xl">
             GatherJoy
           </NavLink>
         </div>

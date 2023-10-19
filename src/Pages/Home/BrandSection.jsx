@@ -3,7 +3,7 @@ import Container from "../../components/Shared/Container";
 import SectionHeader from "../../components/Shared/SectionHeader";
 
 const BrandSection = ({ brands }) => {
-  console.log(brands);
+  // console.log(brands);
   return (
     <Container className="w-[90%]">
       <SectionHeader

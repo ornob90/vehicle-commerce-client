@@ -7,6 +7,7 @@ import BrandShowcase from "../Pages/BrandShowcase/BrandShowcase";
 import Cart from "../Pages/Cart/Cart";
 import Details from "../Pages/Details/Details";
 import PrivateRoute from "./PrivateRoute";
+import AddProduct from "../Pages/AddProduct/AddProduct";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
         loader: () => fetch("data.json"),
       },
       {
-        path: "/:category",
+        path: "brand/:category",
         element: (
           <PrivateRoute>
             <BrandShowcase />
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
             <Cart />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/add-product",
+        element: <AddProduct />,
       },
       {
         path: "/login",
