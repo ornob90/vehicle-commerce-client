@@ -33,17 +33,6 @@ const ProductForm = ({ action, product }) => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    // const category = e.target.brand.value;
-    // const name = e.target.name.value;
-    // const shortdescription = e.target.desc.value;
-    // const price = e.target.price.value;
-    // const horsepower = e.target.horsepower.value;
-    // const type = e.target.type.value;
-    // const image = e.target.url.value;
-    // const rating = e.target.rating.value;
-    // const highwayMileage = e.target["highway-mileage"].value;
-    // const cityMileage = e.target["city-mileage"].value;
-
     const mileage = `${cityMileage} mpg (city) / ${highwayMileage} mpg (highway)`;
 
     const productData = {

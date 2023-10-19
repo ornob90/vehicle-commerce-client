@@ -1,8 +1,9 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import Button from "../Shared/Button";
 // import useAuth from "../../hooks/useAuth";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
+import AuthContext from "../../Context/AuthContext";
 
 const Navbar = () => {
   const navLinks = (
@@ -49,6 +50,8 @@ const Navbar = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const { user, signOutMethod } = useAuth();
+
+  const { isDark, handleSwitchTheme } = useContext(AuthContext);
 
   // console.log(user);
 
@@ -139,6 +142,12 @@ const Navbar = () => {
             >
               Sign Out
             </Button>
+            <input
+              type="checkbox"
+              className="toggle toggle-error checked:bg-black"
+              checked={isDark}
+              onClick={handleSwitchTheme}
+            />
           </div>
         ) : (
           <div className="">
@@ -147,7 +156,13 @@ const Navbar = () => {
               className="bg-[#FF4D30] text-white py-2 px-5 rounded-md"
             >
               Login
-            </Button>{" "}
+            </Button>
+            <input
+              type="checkbox"
+              className="toggle toggle-error"
+              checked={isDark}
+              onClick={handleSwitchTheme}
+            />
           </div>
         )}
 
