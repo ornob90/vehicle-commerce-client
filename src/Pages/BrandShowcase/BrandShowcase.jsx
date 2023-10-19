@@ -12,6 +12,8 @@ const BrandShowcase = () => {
   const [sliderAds, setSliderAds] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  console.log(brands);
+
   useEffect(() => {
     setLoading(true);
     fetch(`${BASE_URL}/ads/${category}`)
@@ -22,7 +24,7 @@ const BrandShowcase = () => {
         setLoading(false);
       });
 
-    console.log(sliderAds);
+    // console.log(sliderAds);
   }, [category]);
 
   return (
@@ -32,8 +34,8 @@ const BrandShowcase = () => {
     >
       <Slider ads={sliderAds} loading={loading} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-16">
-        {[1, 2, 3, 4, 5, 6].map((item) => (
-          <ProductCard key={item} />
+        {brands?.map((brand) => (
+          <ProductCard key={brand?._id} brand={brand} />
         ))}
       </div>
     </Container>
