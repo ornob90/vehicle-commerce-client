@@ -6,6 +6,7 @@ import Home from "../Pages/Home/Home";
 import BrandShowcase from "../Pages/BrandShowcase/BrandShowcase";
 import Cart from "../Pages/Cart/Cart";
 import Details from "../Pages/Details/Details";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -19,15 +20,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/:category",
-        element: <BrandShowcase />,
+        element: (
+          <PrivateRoute>
+            <BrandShowcase />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/products/:id",
-        element: <Details />,
+        element: (
+          <PrivateRoute>
+            <Details />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/cart",
-        element: <Cart />,
+        element: (
+          <PrivateRoute>
+            <Cart />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",

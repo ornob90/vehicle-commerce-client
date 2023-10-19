@@ -1,10 +1,15 @@
 import React from "react";
 import Container from "../../components/Shared/Container";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const { pathname } = useLocation();
   return (
-    <footer className="footer mt-16 p-10 bg-base-200 text-base-content w-full max-w-[1440px] mx-auto">
+    <footer
+      className={`footer mt-16 p-10 bg-base-200 text-base-content w-full max-w-[1440px] mx-auto  ${
+        pathname === "/login" || pathname === "/signup" ? "hidden" : ""
+      }`}
+    >
       <aside className="">
         <NavLink className="text-lg md:text-2xl">GatherJoy</NavLink>
         <p>
