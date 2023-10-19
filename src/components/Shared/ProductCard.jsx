@@ -1,9 +1,11 @@
 import { Rating } from "@mui/material";
 import React from "react";
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({ brand }) => {
-  const { image, name, type, category, price } = brand || {};
+  const { _id, image, name, type, category, price } = brand || {};
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col gap-4 shadow-[0_0px_5px_rgba(0,0,0,0.12)] p-6">
       <div className="h-[200px] sm:h-[220px] md:h-[210px] lg:h-[170px]  ">
@@ -29,7 +31,10 @@ const ProductCard = ({ brand }) => {
           <Button className="bg-[#FF4D30] text-white px-6 lg:px-7 py-2  font-medium rounded-sm">
             Update
           </Button>
-          <Button className="bg-black text-white px-6 lg:px-7 py-2  font-medium rounded-sm">
+          <Button
+            onClick={() => navigate(`/products/${_id}`)}
+            className="bg-black text-white px-6 lg:px-7 py-2  font-medium rounded-sm"
+          >
             Details
           </Button>
         </div>
