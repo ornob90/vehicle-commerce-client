@@ -9,25 +9,52 @@ import {
   TextareaAutosize,
 } from "@mui/material";
 import Button from "../../components/Shared/Button";
+import axios from "axios";
+import { BASE_URL } from "../../API/api";
 
 const AddProduct = () => {
   // 30 mpg (city) / 41 mpg (highway)
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    const brand = e.target.brand.value;
+    const category = e.target.brand.value;
     const name = e.target.name.value;
-    const desc = e.target.desc.value;
+    const shortdescription = e.target.desc.value;
     const price = e.target.price.value;
     const horsepower = e.target.horsepower.value;
     const type = e.target.type.value;
-    const url = e.target.url.value;
+    const image = e.target.url.value;
     const rating = e.target.rating.value;
     const highwayMileage = e.target["highway-mileage"].value;
     const cityMileage = e.target["city-mileage"].value;
 
     const mileage = `${cityMileage} mpg (city) / ${highwayMileage} mpg (highway)`;
+
+    const productData = {
+      category,
+      name,
+      shortdescription,
+      price,
+      horsepower,
+      type,
+      image,
+      rating,
+      mileage,
+    };
+
+    const url = BASE_URL + "product";
+
+    try {
+      const result = await axios.post(url, productData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      console.log(result);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
