@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import AddProduct from "../Pages/AddProduct/AddProduct";
 
 import { BASE_URL } from "../API/api";
+import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,11 @@ const router = createBrowserRouter([
       {
         path: "/add-product",
         element: <AddProduct />,
+      },
+      {
+        path: "/update-product/:id",
+        element: <UpdateProduct />,
+        loader: ({ params }) => fetch(`${BASE_URL}/product/${params.id}`),
       },
       {
         path: "/login",

@@ -1,8 +1,11 @@
 import React from "react";
 import Container from "../../components/Shared/Container";
 import Button from "../../components/Shared/Button";
+import { useNavigate } from "react-router-dom";
 
 const NoProduct = ({ brand }) => {
+  const navigate = useNavigate();
+
   return (
     <Container className="">
       <div className=" flex flex-col justify-center items-center gap-6  w-[90vw]">

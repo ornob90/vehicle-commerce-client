@@ -28,7 +28,10 @@ const ProductCard = ({ brand }) => {
           <p className="font-bold text-2xl">${price}</p>
         </div>
         <div className="flex justify-between items-center">
-          <Button className="bg-[#FF4D30] text-white px-6 lg:px-7 py-2  font-medium rounded-sm">
+          <Button
+            onClick={() => navigate(`/update-product/${_id}`)}
+            className="bg-[#FF4D30] text-white px-6 lg:px-7 py-2  font-medium rounded-sm"
+          >
             Update
           </Button>
           <Button

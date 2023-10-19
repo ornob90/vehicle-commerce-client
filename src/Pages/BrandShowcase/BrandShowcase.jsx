@@ -20,7 +20,7 @@ const BrandShowcase = () => {
     fetch(`${BASE_URL}/ads/${category}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data[0]?.adsUrls);
+        // console.log(data[0]?.adsUrls);
         setSliderAds(data[0]?.adsUrls);
         setLoading(false);
       });
