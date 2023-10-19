@@ -1,10 +1,19 @@
 import React from "react";
 import Container from "../Shared/Container";
 import Button from "../Shared/Button";
+import useTheme from "../../Hooks/useTheme";
 
 const Banner = () => {
+  const { isDark } = useTheme();
+
   return (
-    <Container className="grid grid-cols-1 md:grid-cols-5 min-h-[300px] pt-14 bg-gradient-to-r from-white to-[#FFEDEA] gap-8 md:gap-0 ">
+    <Container
+      className={`grid grid-cols-1 md:grid-cols-5 min-h-[300px] pt-14  gap-8 md:gap-0 ${
+        isDark
+          ? "bg-[#121212] text-white"
+          : "bg-gradient-to-r from-white to-[#FFEDEA]"
+      }`}
+    >
       <div className=" md:col-span-2 flex flex-col justify-center  gap-4 w-[90%] mx-auto">
         <h3 className="text-md sm:text-lg lg:text-xl font-semibold ">
           Discover Excellence in Driving

@@ -4,6 +4,7 @@ import Button from "../Shared/Button";
 import { useContext, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import AuthContext from "../../Context/AuthContext";
+import useTheme from "../../Hooks/useTheme";
 
 const Navbar = () => {
   const navLinks = (
@@ -51,7 +52,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { user, signOutMethod } = useAuth();
 
-  const { isDark, handleSwitchTheme } = useContext(AuthContext);
+  const { isDark, handleSwitchTheme } = useTheme();
 
   // console.log(user);
 
@@ -100,7 +101,7 @@ const Navbar = () => {
                 hidden ? "hidden" : "block"
               } z-10`}
             >
-              <li className="mb-4 flex items-start flex-row ">
+              <li className="mb-4 flex  flex-row  items-center justify-center">
                 <div className="md:hidden h-[60px] w-[60px] rounded-full border border-black">
                   <img
                     // src={user?.photoURL}
@@ -109,8 +110,14 @@ const Navbar = () => {
                   />
                 </div>
 
-                <div className="flex  items-center w-[50%] h-full flex-row">
-                  <p className="md:hidden mt-3">Towfiq</p>
+                <div className="flex w-[50%] items-center  h-full flex-row justify-between">
+                  <p className="md:hidden  w-max">Towfiq</p>
+                  <input
+                    type="checkbox"
+                    className="toggle toggle-error toggle-sm"
+                    checked={isDark}
+                    onChange={handleSwitchTheme}
+                  />
                 </div>
               </li>
               {navLinks}
@@ -146,7 +153,7 @@ const Navbar = () => {
               type="checkbox"
               className="toggle toggle-error checked:bg-black"
               checked={isDark}
-              onClick={handleSwitchTheme}
+              onChange={handleSwitchTheme}
             />
           </div>
         ) : (
@@ -161,7 +168,7 @@ const Navbar = () => {
               type="checkbox"
               className="toggle toggle-error"
               checked={isDark}
-              onClick={handleSwitchTheme}
+              onChange={handleSwitchTheme}
             />
           </div>
         )}

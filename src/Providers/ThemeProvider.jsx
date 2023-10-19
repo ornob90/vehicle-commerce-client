@@ -1,4 +1,4 @@
-import { ThemeContext } from "@emotion/react";
+import ThemeContext from "../Context/ThemeContext";
 import React, { useState } from "react";
 
 const ThemeProvider = ({ children }) => {
