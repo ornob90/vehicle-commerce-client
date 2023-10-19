@@ -4,6 +4,7 @@ import ProductCard from "../../components/Shared/ProductCard";
 import Slider from "./Slider";
 import { useLoaderData, useParams } from "react-router-dom";
 import { BASE_URL } from "../../API/api";
+import NoProduct from "./NoProduct";
 
 const BrandShowcase = () => {
   const brands = useLoaderData();
@@ -34,9 +35,12 @@ const BrandShowcase = () => {
     >
       <Slider ads={sliderAds} loading={loading} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-16">
-        {brands?.map((brand) => (
-          <ProductCard key={brand?._id} brand={brand} />
-        ))}
+        {brands?.length > 0 &&
+          brands?.map((brand) => (
+            <ProductCard key={brand?._id} brand={brand} />
+          ))}
+
+        {brands?.length === 0 && <NoProduct brand={category} />}
       </div>
     </Container>
   );
