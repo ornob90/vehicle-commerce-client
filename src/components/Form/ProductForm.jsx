@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../../components/Shared/Container";
 import {
   FormControl,
@@ -13,19 +13,36 @@ import axios from "axios";
 import { BASE_URL } from "../../API/api";
 
 const ProductForm = ({ action, product }) => {
+  const [category, setCategory] = useState(product?.category || "");
+  const [name, setName] = useState(product?.name || "");
+  const [shortdescription, setShortDescription] = useState(
+    product?.shortdescription || ""
+  );
+  const [price, setPrice] = useState(product?.price || "");
+  const [horsepower, setHorsepower] = useState(product?.horsepower || "");
+  const [type, setType] = useState(product?.type || "");
+  const [image, setImage] = useState(product?.image || "");
+  const [rating, setRating] = useState(product?.rating || "");
+  const [cityMileage, setCityMileage] = useState(
+    product?.mileage.split("/")[0].split(" ")[0] || ""
+  );
+  const [highwayMileage, setHighwayMileage] = useState(
+    product?.mileage.split("/")[1].split(" ")[1] || ""
+  );
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    const category = e.target.brand.value;
-    const name = e.target.name.value;
-    const shortdescription = e.target.desc.value;
-    const price = e.target.price.value;
-    const horsepower = e.target.horsepower.value;
-    const type = e.target.type.value;
-    const image = e.target.url.value;
-    const rating = e.target.rating.value;
-    const highwayMileage = e.target["highway-mileage"].value;
-    const cityMileage = e.target["city-mileage"].value;
+    // const category = e.target.brand.value;
+    // const name = e.target.name.value;
+    // const shortdescription = e.target.desc.value;
+    // const price = e.target.price.value;
+    // const horsepower = e.target.horsepower.value;
+    // const type = e.target.type.value;
+    // const image = e.target.url.value;
+    // const rating = e.target.rating.value;
+    // const highwayMileage = e.target["highway-mileage"].value;
+    // const cityMileage = e.target["city-mileage"].value;
 
     const mileage = `${cityMileage} mpg (city) / ${highwayMileage} mpg (highway)`;
 
@@ -60,6 +77,8 @@ const ProductForm = ({ action, product }) => {
           },
         });
       }
+
+      console.log(result);
     } catch (error) {
       console.error(error);
     }
@@ -72,7 +91,8 @@ const ProductForm = ({ action, product }) => {
         onSubmit={handleFormSubmit}
       >
         <TextField
-          value={product?.category || ""}
+          onChange={(e) => setCategory(e.target.value)}
+          value={category}
           required
           name="brand"
           id="outlined-basic"
@@ -82,7 +102,8 @@ const ProductForm = ({ action, product }) => {
         />
 
         <TextField
-          value={product?.name || ""}
+          onChange={(e) => setName(e.target.value)}
+          value={name}
           required
           name="name"
           id="outlined-basic"
@@ -91,7 +112,8 @@ const ProductForm = ({ action, product }) => {
           className="md:col-span-3 md:row-span-1"
         />
         <TextareaAutosize
-          value={product?.shortdescription || ""}
+          onChange={(e) => setShortDescription(e.target.value)}
+          value={shortdescription}
           required
           name="desc"
           aria-label="minimum height"
@@ -100,7 +122,8 @@ const ProductForm = ({ action, product }) => {
           className="md:col-span-6 md:row-span-2 border border-[#212121]/30 focus:outline-none pl-3 py-2 text-[#666666] rounded-md"
         />
         <TextField
-          value={product?.price || ""}
+          onChange={(e) => setPrice(e.target.value)}
+          value={price}
           required
           name="price"
           id="outlined-basic"
@@ -110,7 +133,8 @@ const ProductForm = ({ action, product }) => {
           type="number"
         />
         <TextField
-          value={product?.horsepower || ""}
+          onChange={(e) => setHorsepower(e.target.value)}
+          value={horsepower}
           required
           name="horsepower"
           id="outlined-basic"
@@ -120,7 +144,8 @@ const ProductForm = ({ action, product }) => {
           type="number"
         />
         <TextField
-          value={product?.type || ""}
+          onChange={(e) => setType(e.target.value)}
+          value={type}
           required
           name="type"
           id="outlined-basic"
@@ -129,7 +154,8 @@ const ProductForm = ({ action, product }) => {
           className="md:col-span-2 md:row-span-1"
         />
         <TextField
-          value={product?.image || ""}
+          onChange={(e) => setImage(e.target.value)}
+          value={image}
           required
           name="url"
           id="outlined-basic"
@@ -138,7 +164,8 @@ const ProductForm = ({ action, product }) => {
           className="md:col-span-4 md:row-span-1"
         />
         <TextField
-          value={product?.rating || ""}
+          onChange={(e) => setRating(e.target.value)}
+          value={rating}
           required
           name="rating"
           id="outlined-basic"
@@ -150,7 +177,8 @@ const ProductForm = ({ action, product }) => {
           max={5}
         />
         <TextField
-          value={product?.mileage.split("/")[1].split(" ")[1] || ""}
+          onChange={(e) => setHighwayMileage(e.target.value)}
+          value={highwayMileage}
           required
           name="highway-mileage"
           id="outlined-basic"
@@ -160,7 +188,8 @@ const ProductForm = ({ action, product }) => {
           type="number"
         />
         <TextField
-          value={product?.mileage.split("/")[0].split(" ")[0] || ""}
+          onChange={(e) => setCityMileage(e.target.value)}
+          value={cityMileage}
           required
           name="city-mileage"
           id="outlined-basic"

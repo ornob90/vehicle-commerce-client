@@ -11,6 +11,7 @@ import auth, { googleProvider } from "../Firebase/firebase.config";
 import AuthContext from "../Context/AuthContext";
 
 const AuthProvider = ({ children }) => {
+    
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
