@@ -73,12 +73,14 @@ const Navbar = () => {
 
   return (
     <nav
-      className={` drop-shadow-[0_0px_5px_rgba(0,0,0,0.12)] bg-gradient-to-r from-white to-[#FFEDEA] w-full ${
-        pathname === "/login" || pathname === "/signup" ? "hidden" : ""
+      className={` drop-shadow-[0_0px_5px_rgba(0,0,0,0.12)]  w-full ${
+        pathname === "/login" || pathname === "/signup"
+          ? "bg-[#1B2028] text-white"
+          : "bg-gradient-to-r from-white to-[#FFEDEA] text-black"
       }`}
     >
       <div
-        className={`z-[12] text-black  navbar w-[95%] mx-auto max-w-[1440px] flex justify-between items-center  pt-4`}
+        className={`z-[12] navbar w-[95%] mx-auto max-w-[1440px] flex justify-between items-center  pt-4`}
       >
         <div className="">
           <div className="dropdown">
@@ -121,7 +123,7 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <NavLink className="btn btn-ghost normal-case text-lg md:text-2xl text-black">
+          <NavLink className="btn btn-ghost normal-case text-lg md:text-2xl ">
             GatherJoy
           </NavLink>
         </div>
