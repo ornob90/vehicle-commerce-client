@@ -26,11 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path: "brand/:category",
-        element: (
-          <PrivateRoute>
-            <BrandShowcase />
-          </PrivateRoute>
-        ),
+        element: <BrandShowcase />,
 
         loader: ({ params }) =>
           fetch(`${BASE_URL}/products/${params.category}`),
@@ -63,7 +59,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/update-product/:id",
-        element: <UpdateProduct />,
+        element: (
+          <PrivateRoute>
+            <UpdateProduct />
+          </PrivateRoute>
+        ),
         loader: ({ params }) => fetch(`${BASE_URL}/product/${params.id}`),
       },
       {
