@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../../components/Shared/Container";
 import CartCard from "./CartCard";
 import { useLoaderData } from "react-router-dom";
@@ -13,11 +13,15 @@ const Cart = () => {
   const initialCartProducts = useLoaderData();
   const { user } = useAuth();
 
-  const [cartProducts, setCartProducts] = useState(
-    initialCartProducts?.filter(
-      (product) => product?.userEmail === user?.email
-    ) || []
-  );
+  const [cartProducts, setCartProducts] = useState([]);
+
+  useEffect(() => {
+    setCartProducts(
+      initialCartProducts?.filter(
+        (product) => product?.userEmail === user?.email
+      )
+    );
+  }, [initialCartProducts]);
 
   const handleDeleteFromCart = async (_id) => {
     try {

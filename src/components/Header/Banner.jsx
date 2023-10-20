@@ -34,7 +34,7 @@ const Banner = () => {
 
         <div>
           <Button className="bg-[#FF4D30] text-white px-6 lg:px-8 py-2 lg:py-3 font-medium rounded-sm">
-            <Link to="/brands">View Brands </Link>
+            View Brands
           </Button>
         </div>
       </div>

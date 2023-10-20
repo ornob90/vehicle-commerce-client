@@ -76,7 +76,7 @@ const ProductForm = ({ action, product }) => {
   return (
     <Container className="min-h-[300px] mb-10">
       <form
-        className=" grid grid-cols-1 md:grid-cols-6 md:grid-row-6 gap-4 w-[80%] lg:w-[70%] mx-auto pt-16 -z-10"
+        className=" grid grid-cols-1 md:grid-cols-6 md:grid-row-6 gap-4 w-[80%] lg:w-[70%] mx-auto pt-16"
         onSubmit={handleFormSubmit}
       >
         <TextField
@@ -87,7 +87,7 @@ const ProductForm = ({ action, product }) => {
           id="outlined-basic"
           label="Brand"
           variant="outlined"
-          className="-z-10 md:col-span-3 md:row-span-1"
+          className=" md:z-0 md:col-span-3 md:row-span-1"
         />
 
         <TextField
@@ -98,7 +98,7 @@ const ProductForm = ({ action, product }) => {
           id="outlined-basic"
           label="Name"
           variant="outlined"
-          className="-z-10 md:col-span-3 md:row-span-1"
+          className=" md:z-0 md:col-span-3 md:row-span-1"
         />
         <TextareaAutosize
           onChange={(e) => setShortDescription(e.target.value)}
@@ -118,7 +118,7 @@ const ProductForm = ({ action, product }) => {
           id="outlined-basic"
           label="Price"
           variant="outlined"
-          className="-z-10 md:col-span-2 md:row-span-1"
+          className=" md:col-span-2 md:row-span-1"
           type="number"
         />
         <TextField
@@ -129,7 +129,7 @@ const ProductForm = ({ action, product }) => {
           id="outlined-basic"
           label="Horsepower"
           variant="outlined"
-          className="-z-10 md:col-span-2 md:row-span-1"
+          className=" md:col-span-2 md:row-span-1"
           type="number"
         />
         <TextField
@@ -140,7 +140,7 @@ const ProductForm = ({ action, product }) => {
           id="outlined-basic"
           label="Type"
           variant="outlined"
-          className="-z-10 md:col-span-2 md:row-span-1"
+          className=" md:col-span-2 md:row-span-1"
         />
         <TextField
           onChange={(e) => setImage(e.target.value)}
@@ -150,7 +150,7 @@ const ProductForm = ({ action, product }) => {
           id="outlined-basic"
           label="Image URL"
           variant="outlined"
-          className="-z-10 md:col-span-4 md:row-span-1"
+          className=" md:col-span-4 md:row-span-1"
         />
         <TextField
           onChange={(e) => setRating(e.target.value)}
@@ -160,7 +160,7 @@ const ProductForm = ({ action, product }) => {
           id="outlined-basic"
           label="Rating"
           variant="outlined"
-          className="-z-10 md:col-span-2 md:row-span-1"
+          className=" md:col-span-2 md:row-span-1"
           type="number"
           min={0}
           max={5}
@@ -173,7 +173,7 @@ const ProductForm = ({ action, product }) => {
           id="outlined-basic"
           label="Highway Mileage"
           variant="outlined"
-          className="-z-10 md:col-span-3 md:row-span-1"
+          className=" md:col-span-3 md:row-span-1"
           type="number"
         />
         <TextField
@@ -184,7 +184,7 @@ const ProductForm = ({ action, product }) => {
           id="outlined-basic"
           label="City Mileage"
           variant="outlined"
-          className="-z-10 md:col-span-3 md:row-span-1"
+          className=" md:col-span-3 md:row-span-1"
           type="number"
         />
         <Button className="md:col-span-6 bg-black text-white py-3 rounded-md">
