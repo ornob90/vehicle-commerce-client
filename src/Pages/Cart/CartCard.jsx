@@ -3,7 +3,7 @@ import { Rating } from "@mui/material";
 import Button from "../../components/Shared/Button";
 import { useNavigate } from "react-router-dom";
 
-const CartCard = ({ product }) => {
+const CartCard = ({ product, handleDeleteFromCart }) => {
   const {
     _id,
     image,
@@ -16,8 +16,6 @@ const CartCard = ({ product }) => {
     category,
     shortdescription,
   } = product || {};
-
-  const navigate = useNavigate();
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-5">
@@ -49,9 +47,9 @@ const CartCard = ({ product }) => {
           <Button
             type="button"
             className="bg-black text-white px-6 lg:px-7 py-2  font-medium rounded-sm"
-            onClick={() => navigate(`/products/${_id}`)}
+            onClick={() => handleDeleteFromCart(_id)}
           >
-            Details
+            Delete
           </Button>
         </div>
       </div>

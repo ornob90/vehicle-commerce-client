@@ -5,7 +5,6 @@ import BrandSection from "./BrandSection";
 import { useLoaderData } from "react-router-dom";
 import TestimonialSection from "./TestimonialSection";
 import WhyChooseUsSection from "./WhyChooseUsSection";
-import useTheme from "../../Hooks/useTheme";
 
 const Home = () => {
   const brands = useLoaderData();
