@@ -106,7 +106,7 @@ const Navbar = () => {
               <li className="mb-4 flex  flex-row  items-center justify-center">
                 <div className="md:hidden h-[60px] w-[60px] rounded-full border border-black">
                   <img
-                    // src={user?.photoURL}
+                    src={user?.photoURL}
                     alt=""
                     className="w-full h-full rounded-full object-cover"
                   />
@@ -125,8 +125,15 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <NavLink className=" normal-case text-md sm:text-lg md:text-2xl font-bold w-max">
-            VehicleCommerce
+          <NavLink className=" normal-case text-md sm:text-lg md:text-2xl font-bold w-max flex gap-2 items-center">
+            <div className=" w-[25px] h-[25px] md:w-[40px] md:h-[30px]">
+              <img
+                src="/logo/logo.jpg"
+                alt=""
+                className="w-full h-full object-cover rounded-md"
+              />
+            </div>
+            <p>VehicleCommerce</p>
           </NavLink>
         </div>
         <div className="hidden lg:flex">
@@ -153,7 +160,7 @@ const Navbar = () => {
             </Button>
             <input
               type="checkbox"
-              className="toggle toggle-error checked:bg-black md:toggle-md toggle-sm"
+              className="toggle toggle-error checked:bg-black md:toggle-md toggle-sm hidden md:block"
               checked={isDark}
               onChange={handleSwitchTheme}
             />
@@ -162,13 +169,13 @@ const Navbar = () => {
           <div className="flex gap-2">
             <Button
               onClick={() => navigate("/login")}
-              className="bg-[#FF4D30] text-white py-2 px-5 rounded-md"
+              className="bg-[#FF4D30] text-white py-1 px-2 md:py-2 md:px-5 rounded-md text-sm md:text-base"
             >
               Login
             </Button>
             <input
               type="checkbox"
-              className="toggle toggle-error checked:bg-black"
+              className="toggle toggle-error checked:bg-black md:toggle-md toggle-sm hidden md:block"
               checked={isDark}
               onChange={handleSwitchTheme}
             />
