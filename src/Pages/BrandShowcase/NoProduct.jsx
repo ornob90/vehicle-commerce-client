@@ -3,12 +3,12 @@ import Container from "../../components/Shared/Container";
 import Button from "../../components/Shared/Button";
 import { useNavigate } from "react-router-dom";
 
-const NoProduct = ({ brand }) => {
+const NoProduct = ({ brand, desc }) => {
   const navigate = useNavigate();
 
   return (
     <Container className="">
-      <div className=" flex flex-col justify-center items-center gap-6  w-[90vw]">
+      <div className=" flex flex-col justify-center items-center gap-6  w-[90vw] min-h-[80vh]">
         <h1 className="font-bold text-[#706F7B] text-6xl lg:text-4xl ">
           No Product To SHOW
         </h1>

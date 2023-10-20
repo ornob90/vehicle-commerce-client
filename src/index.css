@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 @layer {
-  .bg-banner {
+  /* .bg-banner {
     background: url("https://i.imgur.com/pAwwjuq.jpeg");
+    background-size: cover;
+  } */
+  .bg-banner {
+    background: url("/assets/loginbg.jpeg");
     background-size: cover;
   }
 }

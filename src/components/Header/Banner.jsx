@@ -2,6 +2,7 @@ import React from "react";
 import Container from "../Shared/Container";
 import Button from "../Shared/Button";
 import useTheme from "../../Hooks/useTheme";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   const { isDark } = useTheme();
@@ -33,7 +34,7 @@ const Banner = () => {
 
         <div>
           <Button className="bg-[#FF4D30] text-white px-6 lg:px-8 py-2 lg:py-3 font-medium rounded-sm">
-            View Brands
+            <Link to="/brands">View Brands </Link>
           </Button>
         </div>
       </div>

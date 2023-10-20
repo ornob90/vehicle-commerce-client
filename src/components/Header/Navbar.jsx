@@ -125,7 +125,7 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <NavLink className="btn btn-ghost normal-case text-lg md:text-2xl font-bold">
+          <NavLink className=" normal-case text-md sm:text-lg md:text-2xl font-bold w-max">
             VehicleCommerce
           </NavLink>
         </div>
@@ -147,19 +147,19 @@ const Navbar = () => {
 
             <Button
               onClick={handleSignOut}
-              className="bg-[#FF4D30] text-white py-2 px-5 rounded-md"
+              className="bg-[#FF4D30] text-white py-1 px-2 md:py-2 md:px-5 rounded-md text-sm md:text-base"
             >
               Sign Out
             </Button>
             <input
               type="checkbox"
-              className="toggle toggle-error checked:bg-black"
+              className="toggle toggle-error checked:bg-black md:toggle-md toggle-sm"
               checked={isDark}
               onChange={handleSwitchTheme}
             />
           </div>
         ) : (
-          <div className="">
+          <div className="flex gap-2">
             <Button
               onClick={() => navigate("/login")}
               className="bg-[#FF4D30] text-white py-2 px-5 rounded-md"
@@ -168,7 +168,7 @@ const Navbar = () => {
             </Button>
             <input
               type="checkbox"
-              className="toggle toggle-error"
+              className="toggle toggle-error checked:bg-black"
               checked={isDark}
               onChange={handleSwitchTheme}
             />

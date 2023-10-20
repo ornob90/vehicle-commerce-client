@@ -7,6 +7,7 @@ import { BASE_URL } from "../../API/api";
 import Swal from "sweetalert2";
 import axios from "axios";
 import useAuth from "../../Hooks/useAuth";
+import NoProduct from "../BrandShowcase/NoProduct";
 
 const Cart = () => {
   const initialCartProducts = useLoaderData();
@@ -52,8 +53,10 @@ const Cart = () => {
   };
 
   return (
-    <Container className="w-[90%] mx-auto mt-7">
+    <Container className="w-[90%] mx-auto mt-7 min-h-[80vh]">
       <div className="flex flex-col gap-8">
+        {cartProducts?.length === 0 && <NoProduct />}
+
         {cartProducts?.map((product) => (
           <CartCard
             key={product?._id}

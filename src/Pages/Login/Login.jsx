@@ -9,7 +9,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const Login = () => {
   const { signInMethod, googleSignInMethod } = useContext(AuthContext);
-  const emailRef = useRef();
+
   const [showPass, setShowPass] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const { state } = useLocation();
@@ -63,7 +63,7 @@ const Login = () => {
 
   return (
     <Container className="min-h-screen w-full bg-banner relative min-w-screen  flex justify-center items-center">
-      <div className="backdrop-blur-md	 p-4  flex flex-col gap-4 rounded-xl   w-[70%] sm:w-[50%] md:w-[40%] lg:w-[26%] border border-white text-white">
+      <div className="backdrop-blur-md p-4  flex flex-col gap-4 rounded-xl  w-[70%] sm:w-[50%] md:w-[40%] lg:w-[26%] border border-white text-white">
         <p className="text-center text-white text-3xl font-[900]">Login</p>
         <form className="flex flex-col gap-4" onSubmit={handleSignIn}>
           <input

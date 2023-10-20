@@ -9,7 +9,7 @@ const BrandSection = ({ brands }) => {
   const navigate = useNavigate();
   const { isDark } = useTheme();
   return (
-    <Container className="">
+    <Container className="" id="brands" name="brands">
       <div className="w-[90%] mx-auto">
         <SectionHeader
           header="Our Trusted Brands"

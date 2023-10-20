@@ -11,11 +11,13 @@ import AddProduct from "../Pages/AddProduct/AddProduct";
 
 import { BASE_URL } from "../API/api";
 import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
+import Error from "../Pages/Error/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <Error />,
     children: [
       {
         path: "/",
@@ -53,7 +55,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/add-product",
-        element: <AddProduct />,
+        element: (
+          <PrivateRoute>
+            <AddProduct />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/update-product/:id",
