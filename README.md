@@ -6,17 +6,6 @@
 
 This website is a multi-purpose online platform for exploring and managing a wide variety of products. It offers a seamless experience for users to discover, add, and update products from different brands. The key features of this website include:
 
-## Features
-
-# VehicleCommerce
-
-[Live Demo](#) <!-- Add your live URL here -->
-
-## Description
-
-This website is a multi-purpose online platform for exploring and managing a wide variety of products. It offers a seamless experience for users to discover, add, and update products from different brands. The key features of this website include:
-
-## Features
 
 ## Features
 
