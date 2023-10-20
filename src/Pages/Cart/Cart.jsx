@@ -6,11 +6,17 @@ import { useLoaderData } from "react-router-dom";
 import { BASE_URL } from "../../API/api";
 import Swal from "sweetalert2";
 import axios from "axios";
+import useAuth from "../../Hooks/useAuth";
 
 const Cart = () => {
   const initialCartProducts = useLoaderData();
+  const { user } = useAuth();
 
-  const [cartProducts, setCartProducts] = useState(initialCartProducts);
+  const [cartProducts, setCartProducts] = useState(
+    initialCartProducts?.filter(
+      (product) => product?.userEmail === user?.email
+    ) || []
+  );
 
   const handleDeleteFromCart = async (_id) => {
     try {

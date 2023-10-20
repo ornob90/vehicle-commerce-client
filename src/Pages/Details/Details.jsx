@@ -60,7 +60,7 @@ const Details = () => {
   };
 
   return (
-    <Container className="w-[90%] mt-12">
+    <Container className="w-[90%] my-12">
       <div className="grid grid-cols-1 md:grid-cols-5">
         <div className="md:col-span-3">
           <img src={image} alt="" />

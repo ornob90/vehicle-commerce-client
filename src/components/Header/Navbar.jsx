@@ -125,8 +125,8 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <NavLink className="btn btn-ghost normal-case text-lg md:text-2xl">
-            GatherJoy
+          <NavLink className="btn btn-ghost normal-case text-lg md:text-2xl font-bold">
+            VehicleCommerce
           </NavLink>
         </div>
         <div className="hidden lg:flex">

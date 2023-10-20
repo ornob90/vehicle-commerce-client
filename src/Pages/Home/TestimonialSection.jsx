@@ -28,7 +28,7 @@ const TestimonialSection = () => {
         subHeader="Reviewed by People"
         desc="Discover the positive impact we've made on the our clients by reading through their testimonials. Our clients have experienced our service and results, and they're eager to share their positive experiences with you."
       />
-      <div className="w-[90%] md:w-[70%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="w-[90%] md:w-[70%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 pb-10">
         {reviews.map(({ review, name, shortName, img }) => (
           <div key={name} className="p-5 shadow-lg">
             <h3 className="font-semibold text-xl mb-12">{review}</h3>
